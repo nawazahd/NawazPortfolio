@@ -4,12 +4,9 @@ import { navLinks } from "../assets/lib/data";
 import ScrollToAnchor from "./Listener";
 import { useActiveSectionContext } from "../context/active-section-context";
 import { useTheme } from "../context/theme-context";
-import { useLanguage } from "../context/language-context";
-import LanguageSwitch from "./LanguageSwitch";
 
 const NavBar: React.FC = () => {
   const { theme } = useTheme();
-  const { language } = useLanguage();
 
   const [isSticky, setIsSticky] = useState(false);
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -80,7 +77,7 @@ const NavBar: React.FC = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`relative ${linkClasses}`}
-        aria-aria-current={link}
+        
       >
         <span>
           {leftArrow}
@@ -109,10 +106,10 @@ const NavBar: React.FC = () => {
             <CustomNavLink key={index} link={link.hash} linkEn={link.en}>
               {link.en === activeSection ? (
                 <div>
-                  <span className="text-[--orange] absolute -left-5 top-0">
+                  <span className="text-[--orange] absolute -left-8 top-0">
                     &lt;
                   </span>
-                  {language === "DE" ? link.de : link.en}
+                  { link.en}
                   {/* {link.de.toLocaleUpperCase()} */}
                 </div>
               ) : (
@@ -122,14 +119,14 @@ const NavBar: React.FC = () => {
                     setTimeOfLastClick(Date.now());
                   }}
                 >
-                  {language === "DE" ? link.de : link.en}
+                  {link.en}
 
                   {/* {link.de.toLocaleUpperCase()} */}
                 </div>
               )}
             </CustomNavLink>
           ))}
-          <LanguageSwitch />
+         
         </nav>
       )}
       {isMobileMenuActive && (
@@ -163,7 +160,7 @@ const NavBar: React.FC = () => {
               )}
             </CustomNavLink>
           ))}
-          <LanguageSwitch />
+          
         </nav>
       )}
     </React.Fragment>

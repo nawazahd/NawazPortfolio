@@ -95,7 +95,6 @@ const Home: React.FC = () => {
                 height="middle"
                 dividerStyle="solid"
               />
-
               <LazyContact />
             </div>
           </Suspense>

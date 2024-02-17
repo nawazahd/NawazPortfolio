@@ -1,12 +1,10 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLanguage } from "../context/language-context";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function useQuoteAnimation(quoteElementSelector: string) {
-  const { language } = useLanguage();
 
   useEffect(() => {
     const h2Element = document.querySelector(quoteElementSelector);
@@ -63,14 +61,14 @@ export function useQuoteAnimation(quoteElementSelector: string) {
           } else {
             h2Timeline.progress(self.progress);
           }
-          const scrollDirection = self.getVelocity() > 1 ? 1 : -1; // 1 für runter scrollen, -1 für hoch scrollen
+          const scrollDirection = self.getVelocity() > 1 ? 1 : -1; 
           if (scrollDirection === 1) {
-            h2Timeline.play(); // Animation fortsetzen, wenn der Benutzer nach unten scrollt
+            h2Timeline.play(); // Animation fortsetzen, 
           } else {
-            h2Timeline.pause(); // Animation stoppen, wenn der Benutzer nach oben scrollt
+            h2Timeline.pause(); // Animation stoppen, 
           }
         },
       });
     }
-  }, [quoteElementSelector, language]);
+  }, [quoteElementSelector,]);
 }

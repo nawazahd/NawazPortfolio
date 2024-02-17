@@ -1,12 +1,12 @@
 # Portfolio Webseite
 
-This is a portfolio website built using React, Tailwind CSS, and TypeScript. The website showcases my skills and projects as a full-stack developer. For the contactform i used a backend, which is build on node.js and express.
+This is a portfolio website  is built using React, Tailwind CSS, and TypeScript. The website showcases my skills and projects as a full-stack developer. For the contactform i used a backend, which is build on node.js and express.
 
 ## Demo
 
 <img src="./screenshot.jpg" alt="Screenshot" width="1080"/>
 
-You can also check out the live demo of the portfolio website [here](https://alpaycelik.dev).
+You can also check out the live demo of the portfolio website [here]().
 
 ## Features
 
@@ -45,8 +45,6 @@ npm run dev
 To run this project, you will need to add the following environment variables to your .env file. See .env-init in root directory
 
 `API_BASE_URL`
-
-`API_SERVICESTATUS_URL`
 
 ## Tech Stack
 

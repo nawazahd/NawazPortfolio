@@ -1,28 +1,20 @@
 import React from "react";
-
 import bannerBg from "../assets/img/bannerbg.webp";
 import { quotesData } from "../assets/lib/data";
-import { useLanguage } from "../context/language-context";
 import { useQuoteAnimation } from "../hooks/useQuoteAnimation";
-
 interface BannerProps {
   style: "withBG" | "noBG";
   quoteIndex: number;
   containerType: string;
 }
-
 const BannerQuote: React.FC<BannerProps> = ({
   style,
   quoteIndex,
   containerType,
 }) => {
-  const { language } = useLanguage();
-
   const quoteTranslation =
-    language === "DE" ? quotesData[quoteIndex].de : quotesData[quoteIndex].en;
-
+     quotesData[quoteIndex].en;
   useQuoteAnimation(`.${containerType}-container h2`);
-
   return style === "withBG" ? (
     <React.Fragment>
       <section className="quote-banner relative overflow-x-clip z-[1]">
